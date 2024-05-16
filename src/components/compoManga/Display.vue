@@ -3,19 +3,11 @@ import { useMangaStore } from '../../stores/stock.js'
 import { usePanierStore } from '@/stores/panier'
 import { defineEmits } from 'vue';
 import { computed } from 'vue';
-import { ref } from 'vue';
 
-const id = ref(null)
+
 const mangaStore = useMangaStore();
 const panierStore = usePanierStore();
 const emit = defineEmits(['ajoutPanierManga'])
-
-
-function deleteManga(id) {
-  const index = mangaStore.mangaList.findIndex((item) => item.id === id.value)
-  console.log(index)
-  mangaStore.deleteMangaFromList(index)
-}
 
 function ajoutPanierManga(item, tome) {
   panierStore.updatePanier({
@@ -51,7 +43,7 @@ const getfilteredList = computed(()=>{
         <p class="card-text">{{ item.style }}</p>
 
         <div class="consoleContain">
-          <div v-for="tome in item.tomes" class="tome-container">
+          <div v-for="tome in item.tomes" :key='tome.id' class="tome-container">
             <!-- <p class=" text-center">{{ `Tome : ${tome.numero} Prix : ${tome.prix} Nombre en stock : ${tome.stock}` }}</p> -->
             <div class="tomContain">
               <div>
