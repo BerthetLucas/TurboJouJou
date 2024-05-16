@@ -3,7 +3,7 @@
 import Display from '../components/compoJoujou/Display.vue'
 import FilterItem from '../components/compoJoujou/FilterItem.vue'
 export default {
-  name: 'JouJouView',
+  name: "JouJouView",
   components: {
     Display,
     FilterItem
