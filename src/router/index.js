@@ -1,6 +1,6 @@
 
 import { createRouter, createWebHistory } from 'vue-router'
-import JouJouView from '../Pages/JoujouView.vue'
+import JouJouView from '../Pages/JouJouView.vue'
 import MangasPage from '../Pages/MangasPage.vue'
 import JeuxVideoView from '../Pages/JeuxVideoView.vue'
 import AdminPageView from '../Pages/AdminPageView.vue'
